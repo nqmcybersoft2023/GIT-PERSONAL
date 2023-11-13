@@ -1,0 +1,466 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    --primary-color: #ff6600;
+    --secondary-color: #ffc600;
+    --font-color: gray;
+    --bg-color: #222;
+    --heading-color: #eee;
+    --border-color: rgba(255, 255, 255, 0.2);
+    --border-color-light: rgba(255, 255, 255, 0.1);
+    --nav-color: #fff;
+    --dropdown-color: #121725;
+    --iframe-filter: grayscale(100%);
+    --bg-light: #282828;
+    --bg-grey: #282828;
+    --card-bg: #888c96;
+    --footer-bg: #222;
+
+}
+
+/* HEADER  */
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%
+}
+
+
+
+.container {
+    display: grid;
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+.header__content {
+    width: 100%;
+    height: 120px;
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    grid-gap: 20px;
+    padding: 40px 0 20px 0;
+    align-items: left;
+}
+
+.header__left {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: left;
+    list-style: none;
+
+}
+
+.header__left a {
+    text-decoration: none;
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.header__right {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    align-items: center;
+}
+
+.search-bar form {
+    display: flex;
+    background: white;
+    width: 250px;
+    height: 45px;
+    position: relative;
+    margin: 0 auto;
+    flex: 1;
+    border-color: white;
+    border-radius: 10px;
+}
+
+.header__right input {
+    display: flex;
+    flex: 1;
+    padding: 10px 50px 10px 20px;
+    height: 45px;
+    font-size: 16px;
+    color: #eee;
+    border: none;
+    font-weight: 400;
+    border-radius: 10px;
+    position: relative;
+    right: 0;
+    background: white;
+    outline: 0;
+    border: none;
+
+
+}
+
+.search-bar i {
+    display: inline-block;
+    color: #eee;
+    position: absolute;
+    color: black;
+    right: 20px;
+    font-size: 25px;
+    top: 12px;
+    cursor: pointer;
+}
+
+.darkandlight {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+.darkandlight i {
+    display: block;
+    color: #eee;
+}
+
+.btn {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.btn i {
+    display: inline-block;
+    border: none;
+    position: relative;
+    border: solid;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 24px;
+    width: 24px;
+    color: white;
+
+}
+
+.btn i::before,
+i::after {
+    width: 24px;
+    height: 24px;
+
+    content: "";
+    position: absolute;
+    height: 2px;
+    border-right: 4px solid;
+    border-left: 4px solid;
+    left: -6px;
+    top: 5px;
+
+
+}
+
+.menuhome i {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Light theme */
+#darkandlight {
+    background-color: rgba(255, 255, 255, 0.466);
+    --font-color: #c2d0da;
+}
+
+#switchButton {
+    display: inline-block;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.1);
+
+
+}
+
+#switchButton .fa-sun h2 {
+    color: black;
+    display: none;
+    border: none;
+
+
+}
+
+
+#switchButton .fa-moon {
+    display: block;
+    border: none;
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark Theme*/
+.dark#darkandlight {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dark #switchButton {
+    background-color: rgba(255, 255, 255, 0.1);;
+    border: none;
+    
+}
+
+.dark #switchButton .fa-sun {
+    display: block;
+    color: white;
+}
+
+
+
+.dark .card {
+    background-color: #222;
+    color: white;
+    border: 1px solid white;
+}
+
+.fa-sun {
+    position: relative;
+    transform: scale(var(--ggs, 1));
+    height: 24px;
+    background: linear-gradient(180deg, currentColor 4px, transparent 0) no-repeat 5px -6px/2px 6px, linear-gradient(180deg, currentColor 4px, transparent 0) no-repeat 5px 14px/2px 6px, linear-gradient(180deg, currentColor 4px, transparent 0) no-repeat -8px 5px/6px 2px, linear-gradient(180deg, currentColor 4px, transparent 0) no-repeat 14px 5px/6px 2px;
+    border-radius: 100px;
+    box-shadow: inset 0 0 0 2px;
+    border: 6px solid transparent;
+    background-color: whitesmoke;
+
+}
+
+.fa-moon {
+
+    overflow: hidden;
+    position: relative;
+    transform: rotate(-135deg) scale(var(--ggs, 1));
+    --bg-color: #222;
+    width: 20px;
+    height: 20px;
+    border: 2px solid;
+    border-bottom: 2px solid transparent;
+}
+
+.dark #switchButton .fa-moon h2 {
+    display: block;
+    color: #eee;
+
+}
+
+/* CAROUSEL */
+.carousel {
+    background: url(../images/banner1.jpg) no-repeat center / cover;
+    height: 700px;
+    align-items: center;
+    justify-content: center;
+
+    text-align: left;
+    background-position: initial;
+    background-attachment: fixed;
+    min-height: 700px;
+    height: 700px;
+    opacity: 1;
+
+}
+
+.carousel .container {
+    max-width: 1280px;
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+
+
+.carousel__content {
+    max-width: 600px;
+    text-align: left;
+    position: absolute;
+}
+
+.carousel__content h1 {
+    display: block;
+    font-size: 54px;
+    line-height: 64px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #fff;
+    text-align: left;
+}
+
+.carousel__content p {
+    margin-top: 40px;
+    display: block;
+    font-size: 16px;
+    line-height: 28px;
+    color: #fff;
+}
+
+/* .carousel__content button {
+    background: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .1);
+    backdrop-filter: blur(3px);
+    transition: all .5s;
+    margin-top: 40px;
+    padding: 12px 15px;
+    font-size: 16px;
+    line-height: 30px;
+    position: absolute;
+
+    border-radius: 10px;
+    border: 2px solid white;
+
+    cursor: pointer !important;
+
+} */
+
+
+.carousel__content a {
+    position: absolute;
+    background: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .1);
+    backdrop-filter: blur(3px);
+    color: white;
+    padding: 0 15px;
+    font-size: 16px;
+    line-height: 30px;
+    display: block;
+    text-decoration: none;
+    transition: 0.5s all;
+    font-weight: 700;
+    transition: 0.3s ease-in;
+
+    border-radius: 10px;
+    border: 2px solid white;
+    margin: 48px 8px 0 0;
+    padding: 9px 42px;
+    width: 200px;
+    height: 50px;
+}
+
+.carousel__content a:hover {
+    background: white;
+    transition: all 0.3s;
+    color: orange;
+}
+
+/* ABOUT US  */
+.aboutus {
+    display: block;
+    max-width: 12000px
+}
+
+.aboutus .row {
+    display: flex;
+    margin: auto;
+    height: 410px;
+}
+
+.aboutus__left {
+    padding-top: 100px;
+    display: inline-block;
+    width: 40%;
+    height: auto;
+
+}
+
+.aboutus__left h2 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 1px;
+    color: orange;
+    display: block;
+    font-family: 'Pacifico', sans-serif;
+
+}
+ 
+
+.aboutus__left span {
+
+    font-size: 38px;
+    line-height: 48px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    margin-right: 50px;
+
+}
+
+.aboutus__right {
+    padding-top: 100px;
+    display: inline-block;
+    width: 60%;
+    height: auto;
+
+
+}
+
+
+.aboutus__right p {
+    display: inline-block;
+    padding-left: 3rem;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 500;
+
+    color: #c2d0da;
+    font-family: 'Quicksand', sans-serif;
+}
+    /* RESTAURANTS  */
+.restaurants{
+    display: block;
+    width: 100%;
+    height: 600px;
+}
+.content__item{
+    display: flex;
+    align-items: center !important;
+}
+.item__left{
+    position: relative;
+    z-index: 1;
+    min-height: 600px;
+    width: 50%;
+    margin: 0 auto;
+    align-items: left;
+}
+.restaurants img{
+    display: inline-block;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    min-height: 600px;
+    margin: 0 auto;
+}
+.item__right{
+    display: inline-block;
+    background-color: #ff6600;
+    width: 50%;
+    height: 600px;
+    margin: 0 auto;
+    padding: 3rem !important;
+
+}
+.item__right h3{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 1px;
+    color: #eee;
+    display: block;
+    font-family: 'Pacifico', cursive;
+}
+
+
+ 
